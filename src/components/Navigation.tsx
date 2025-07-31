@@ -24,7 +24,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img 
-              src="public/logo.png" 
+              src="/logo.png" 
               alt="Logo Nova Sinalização" 
               className="h-14 w-auto" 
             />
