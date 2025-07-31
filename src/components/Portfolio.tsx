@@ -9,25 +9,29 @@ const Portfolio = () => {
       image: project1,
       title: "Sinalização Rodoviária BR-101",
       description: "Implementação completa de sinalização horizontal e vertical em 15km de rodovia.",
-      category: "Rodovias"
+      category: "Rodovias",
+      link: "/projetos/rodovias"
     },
     {
       image: project2,
       title: "Complexo Viário Urbano",
       description: "Projeto de sinalização semafórica e viária para centro urbano de grande movimento.",
-      category: "Urbano"
+      category: "Urbano",
+      link: "/projetos/urbano"
     },
     {
       image: project1,
       title: "Sinalização Aeroportuária",
       description: "Sistema completo de sinalização para área de circulação de aeroporto regional.",
-      category: "Aeroporto"
+      category: "Aeroporto",
+      link: "/projetos/aeroporto"
     },
     {
       image: project2,
       title: "Via Expressa Municipal",
       description: "Modernização da sinalização em 8km de via expressa com tecnologia LED.",
-      category: "Municipal"
+      category: "Municipal",
+      link: "/projetos/municipal"
     }
   ];
 
@@ -49,7 +53,7 @@ const Portfolio = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer">
+            <a key={index} href={project.link} className="group cursor-pointer block">
               <div className="relative overflow-hidden rounded-xl mb-4">
                 <img 
                   src={project.image} 
@@ -71,7 +75,7 @@ const Portfolio = () => {
               <p className="text-muted-foreground text-sm font-uni-neue">
                 {project.description}
               </p>
-            </div>
+            </a>
           ))}
         </div>
 
