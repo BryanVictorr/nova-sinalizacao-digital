@@ -22,11 +22,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-russo text-lg font-bold">NS</span>
-            </div>
-            <span className="font-russo text-xl text-brand-dark">Nova Sinalização</span>
+          <div className="flex items-center">
+            <img 
+              src="public/logo.png" 
+              alt="Logo Nova Sinalização" 
+              className="h-14 w-auto" 
+            />
           </div>
 
           {/* Desktop Menu */}

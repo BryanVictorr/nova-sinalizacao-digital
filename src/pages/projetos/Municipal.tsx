@@ -1,0 +1,172 @@
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, Phone, CheckCircle } from 'lucide-react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import project1 from '@/assets/project-1.jpg';
+import project2 from '@/assets/project-2.jpg';
+
+const Municipal = () => {
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para sinalização municipal.', '_blank');
+  };
+
+  const features = [
+    "Sinalização de vias expressas e marginais",
+    "Sistemas de controle de velocidade integrados",
+    "Iluminação LED de alta eficiência energética",
+    "Materiais reflexivos de longa durabilidade",
+    "Manutenção preventiva e corretiva programada"
+  ];
+
+  const projectDetails = [
+    {
+      title: "Via Expressa Tiête - SP",
+      description: "Modernização completa de 8km com tecnologia LED",
+      image: project2
+    },
+    {
+      title: "Marginal Pinheiros",
+      description: "Sistema inteligente de controle de tráfego",
+      image: project1
+    },
+    {
+      title: "Complexo Viário ABC",
+      description: "Sinalização integrada para 3 municípios da região",
+      image: project2
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="relative h-96 bg-gradient-to-r from-brand-dark/90 to-brand-dark/70">
+        <div className="absolute inset-0">
+          <img 
+            src={project2} 
+            alt="Sinalização Municipal" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-brand-dark/70"></div>
+        </div>
+        <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="max-w-3xl text-white">
+            <Button 
+              variant="ghost" 
+              className="text-white hover:bg-white/20 mb-4 p-2"
+              onClick={() => window.history.back()}
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Voltar
+            </Button>
+            <h1 className="font-russo text-4xl md:text-6xl mb-6">
+              Sinalização Municipal
+            </h1>
+            <p className="text-xl font-uni-neue mb-8 opacity-90">
+              Soluções especializadas para vias expressas municipais, integrando tecnologia e sustentabilidade.
+            </p>
+            <Button variant="whatsapp" size="lg" onClick={handleWhatsApp}>
+              <Phone className="w-5 h-5" />
+              Solicitar Orçamento
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div>
+              <h2 className="font-russo text-3xl text-brand-dark mb-6">
+                Parceiro dos Municípios
+              </h2>
+              <p className="text-lg text-muted-foreground font-uni-neue mb-6">
+                Desenvolvemos soluções específicas para prefeituras e órgãos municipais, atendendo vias expressas, 
+                marginais e grandes avenidas. Nossos projetos municipais combinam eficiência operacional com 
+                sustentabilidade ambiental.
+              </p>
+              <p className="text-lg text-muted-foreground font-uni-neue mb-8">
+                Trabalhamos em parceria com as administrações locais para criar sistemas de sinalização que 
+                atendam às necessidades específicas de cada município, sempre respeitando o orçamento público 
+                e maximizando os resultados.
+              </p>
+              
+              <div className="space-y-4">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground font-uni-neue">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <img 
+                src={project1} 
+                alt="Projeto Municipal" 
+                className="w-full h-80 object-cover rounded-xl shadow-lg"
+              />
+              <div className="bg-card p-6 rounded-xl border">
+                <h3 className="font-russo text-xl text-brand-dark mb-3">Parcerias Municipais</h3>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center">
+                    <div className="text-3xl font-russo text-primary mb-2">40+</div>
+                    <div className="text-sm text-muted-foreground font-uni-neue">Municípios Atendidos</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-russo text-primary mb-2">60%</div>
+                    <div className="text-sm text-muted-foreground font-uni-neue">Economia Energética</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Projects Gallery */}
+          <div className="mb-20">
+            <h2 className="font-russo text-3xl text-brand-dark text-center mb-12">
+              Grandes Projetos Municipais
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {projectDetails.map((project, index) => (
+                <div key={index} className="group">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <h3 className="font-russo text-lg text-brand-dark mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm font-uni-neue">{project.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-12 rounded-2xl text-center">
+            <h2 className="font-russo text-3xl text-brand-dark mb-4">
+              Seu Município Merece o Melhor
+            </h2>
+            <p className="text-lg text-muted-foreground font-uni-neue mb-8 max-w-2xl mx-auto">
+              Entre em contato e descubra como podemos modernizar a sinalização do seu município com eficiência e economia.
+            </p>
+            <Button variant="whatsapp" size="lg" onClick={handleWhatsApp}>
+              <Phone className="w-5 h-5" />
+              Falar com Especialista
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Municipal;
