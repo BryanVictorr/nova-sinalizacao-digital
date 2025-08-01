@@ -89,53 +89,86 @@ const Sobre = () => {
       {/* Mission, Vision, Values */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Mission */}
-            <Card className="text-center p-8 border-border/50 hover:shadow-card transition-all">
-              <CardContent className="space-y-4">
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Target className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-russo text-2xl text-brand-dark">Missão</h3>
-                <p className="text-muted-foreground font-uni-neue">
-                  Proporcionar soluções inovadoras e seguras em sinalização viária, 
-                  contribuindo para a organização do tráfego e a redução de acidentes, 
-                  sempre com qualidade e pontualidade.
+            <div className="relative bg-brand-dark rounded-3xl p-8 text-white overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="font-russo text-2xl text-primary mb-4">Missão:</h3>
+                <p className="font-uni-neue text-white/90 leading-relaxed">
+                  Proporcionar soluções completas em sinalização viária, com inovação, 
+                  qualidade e eficiência, garantindo segurança no trânsito e contribuindo 
+                  para o desenvolvimento urbano sustentável.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
+                <Target className="w-12 h-12 text-brand-dark" />
+              </div>
+            </div>
 
             {/* Vision */}
-            <Card className="text-center p-8 border-border/50 hover:shadow-card transition-all">
-              <CardContent className="space-y-4">
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Eye className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-russo text-2xl text-brand-dark">Visão</h3>
-                <p className="text-muted-foreground font-uni-neue">
-                  Ser reconhecida como a empresa líder em sinalização viária no país, 
-                  referência em qualidade, inovação e responsabilidade social.
+            <div className="relative bg-brand-dark rounded-3xl p-8 text-white overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="font-russo text-2xl text-primary mb-4">Visão:</h3>
+                <p className="font-uni-neue text-white/90 leading-relaxed">
+                  Ser reconhecida como a principal referência em sinalização viária no 
+                  Brasil, destacando-se pela excelência técnica, inovação contínua e impacto 
+                  positivo na mobilidade urbana e rodoviária.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
+                <Eye className="w-12 h-12 text-brand-dark" />
+              </div>
+            </div>
 
             {/* Values */}
-            <Card className="text-center p-8 border-border/50 hover:shadow-card transition-all">
-              <CardContent className="space-y-4">
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Heart className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-russo text-2xl text-brand-dark">Valores</h3>
-                <div className="space-y-2">
-                  {values.map((value, index) => (
-                    <div key={index} className="flex items-start space-x-2 text-sm">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="font-uni-neue text-muted-foreground text-left">{value}</span>
+            <div className="relative bg-brand-dark rounded-3xl p-8 text-white overflow-hidden md:col-span-2 lg:col-span-1">
+              <div className="relative z-10">
+                <h3 className="font-russo text-2xl text-primary mb-4">Valores:</h3>
+                <div className="space-y-3">
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-white mb-2">• Compromisso com a segurança</h4>
+                    <p className="font-uni-neue text-white/80 text-sm">
+                      Nosso foco é salvar vidas por meio de sinalizações eficientes e visíveis.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-white mb-2">• Excelência técnica</h4>
+                    <p className="font-uni-neue text-white/80 text-sm">
+                      Buscamos a mais alta qualidade em todos os serviços e materiais utilizados.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-white mb-2">• Inovação</h4>
+                    <p className="font-uni-neue text-white/80 text-sm">
+                      Investimos constantemente em novas tecnologias e processos inteligentes.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                      <h4 className="font-uni-neue font-bold text-white">• Sustentabilidade</h4>
+                      <p className="font-uni-neue text-white/80 text-xs">
+                        Adotamos práticas que respeitam o meio ambiente e promovem o uso responsável de recursos.
+                      </p>
                     </div>
-                  ))}
+                    <div>
+                      <h4 className="font-uni-neue font-bold text-white">• Ética e transparência</h4>
+                      <p className="font-uni-neue text-white/80 text-xs">
+                        Atuamos com integridade em todos os relacionamentos e contratos.
+                      </p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-white">• Valorização das pessoas</h4>
+                    <p className="font-uni-neue text-white/80 text-xs">
+                      Incentivamos o crescimento profissional e pessoal da nossa equipe.
+                    </p>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
+                <Heart className="w-12 h-12 text-brand-dark" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
