@@ -126,41 +126,33 @@ const Sobre = () => {
                 <h3 className="font-russo text-2xl text-primary mb-4">Valores:</h3>
                 <div className="space-y-3">
                   <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-2">• Compromisso com a segurança</h4>
+                    <h4 className="font-uni-neue font-bold text-white mb-1">• Segurança</h4>
                     <p className="font-uni-neue text-white/80 text-sm">
-                      Nosso foco é salvar vidas por meio de sinalizações eficientes e visíveis.
+                      Foco em salvar vidas através de sinalizações eficientes.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-2">• Excelência técnica</h4>
+                    <h4 className="font-uni-neue font-bold text-white mb-1">• Excelência</h4>
                     <p className="font-uni-neue text-white/80 text-sm">
-                      Buscamos a mais alta qualidade em todos os serviços e materiais utilizados.
+                      Qualidade superior em todos os serviços prestados.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-2">• Inovação</h4>
+                    <h4 className="font-uni-neue font-bold text-white mb-1">• Inovação</h4>
                     <p className="font-uni-neue text-white/80 text-sm">
-                      Investimos constantemente em novas tecnologias e processos inteligentes.
+                      Tecnologias avançadas e processos inteligentes.
                     </p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 mt-4">
-                    <div>
-                      <h4 className="font-uni-neue font-bold text-white">• Sustentabilidade</h4>
-                      <p className="font-uni-neue text-white/80 text-xs">
-                        Adotamos práticas que respeitam o meio ambiente e promovem o uso responsável de recursos.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-uni-neue font-bold text-white">• Ética e transparência</h4>
-                      <p className="font-uni-neue text-white/80 text-xs">
-                        Atuamos com integridade em todos os relacionamentos e contratos.
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-white mb-1">• Sustentabilidade</h4>
+                    <p className="font-uni-neue text-white/80 text-sm">
+                      Práticas responsáveis com o meio ambiente.
+                    </p>
                   </div>
                   <div>
-                    <h4 className="font-uni-neue font-bold text-white">• Valorização das pessoas</h4>
-                    <p className="font-uni-neue text-white/80 text-xs">
-                      Incentivamos o crescimento profissional e pessoal da nossa equipe.
+                    <h4 className="font-uni-neue font-bold text-white mb-1">• Transparência</h4>
+                    <p className="font-uni-neue text-white/80 text-sm">
+                      Integridade em todos os relacionamentos.
                     </p>
                   </div>
                 </div>

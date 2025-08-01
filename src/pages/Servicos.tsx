@@ -122,71 +122,58 @@ const Servicos = () => {
       {/* Services Detail */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="space-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <Card className="h-full border-border/50 hover:shadow-card transition-all">
-                    <CardHeader className="text-center pb-6">
-                      <div className="mx-auto mb-6 p-4 bg-primary/10 rounded-full text-primary">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="font-russo text-2xl text-brand-dark">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <div>
-                        <h4 className="font-uni-neue font-bold text-lg text-brand-dark mb-2">O que é:</h4>
-                        <CardDescription className="font-uni-neue">
-                          {service.description}
-                        </CardDescription>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-uni-neue font-bold text-lg text-brand-dark mb-2">Como é realizada:</h4>
-                        <CardDescription className="font-uni-neue">
-                          {service.howItWorks}
-                        </CardDescription>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-uni-neue font-bold text-lg text-brand-dark mb-2">Valor agregado:</h4>
-                        <CardDescription className="font-uni-neue">
-                          {service.value}
-                        </CardDescription>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+              <div key={index} className="bg-brand-dark rounded-xl overflow-hidden p-8 text-white">
+                <h3 className="font-russo text-2xl text-primary mb-6 flex items-center gap-3">
+                  <div className="p-2 bg-primary/20 rounded-full text-primary">
+                    {service.icon}
+                  </div>
+                  {service.title}
+                </h3>
                 
-                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <div className="space-y-6">
-                    <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-                      <h3 className="font-russo text-xl text-brand-dark mb-4">
-                        {service.impact}
-                      </h3>
-                      <div className="space-y-3">
-                        {service.benefits.map((benefit, idx) => (
-                          <div key={idx} className="flex items-center space-x-3">
-                            <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                            <span className="font-uni-neue text-muted-foreground">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <Button 
-                      variant="default" 
-                      size="lg"
-                      className="w-full"
-                      onClick={() => handleServiceContact(service.title)}
-                    >
-                      Saiba Mais e Peça um Orçamento
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Button>
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-lg mb-2">O que é:</h4>
+                    <p className="font-uni-neue text-sm text-gray-300">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-lg mb-2">Como é realizada:</h4>
+                    <p className="font-uni-neue text-sm text-gray-300">
+                      {service.howItWorks}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-lg mb-2">Valor agregado:</h4>
+                    <p className="font-uni-neue text-sm text-gray-300">
+                      {service.value}
+                    </p>
                   </div>
                 </div>
+                
+                {/* Caixa de vantagens */}
+                <div className="bg-primary p-4 rounded-lg mb-6">
+                  <h4 className="font-uni-neue font-bold text-brand-dark mb-3">Vantagens</h4>
+                  <ul className="space-y-1 text-sm text-brand-dark font-uni-neue">
+                    {service.benefits.map((benefit, idx) => (
+                      <li key={idx}>• {benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-brand-dark"
+                  onClick={() => handleServiceContact(service.title)}
+                >
+                  Solicitar Orçamento
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
               </div>
             ))}
           </div>
