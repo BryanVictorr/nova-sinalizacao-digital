@@ -67,9 +67,66 @@ const ServicesSection = () => {
           </p>
         </div>
 
+        {/* Card Especial - Sinalização Horizontal */}
+        <div className="mb-12">
+          <div className="bg-brand-dark rounded-xl overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Conteúdo de texto */}
+              <div className="p-8 lg:p-12 text-white">
+                <h3 className="font-russo text-2xl lg:text-3xl text-primary mb-6">
+                  Sinalização Horizontal
+                </h3>
+                
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-lg mb-2">O que é:</h4>
+                    <p className="font-uni-neue text-sm text-gray-300">
+                      Pintura de solo em vias urbanas e rodoviárias com tintas de alta durabilidade.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-lg mb-2">Como é realizada:</h4>
+                    <p className="font-uni-neue text-sm text-gray-300">
+                      Aplicação com equipamentos de última geração, garantindo alinhamento perfeito.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-uni-neue font-bold text-lg mb-2">Valor agregado:</h4>
+                    <p className="font-uni-neue text-sm text-gray-300">
+                      Melhora a organização do tráfego e reduz o risco de acidentes.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Caixa de vantagens */}
+                <div className="bg-primary p-4 rounded-lg">
+                  <h4 className="font-uni-neue font-bold text-brand-dark mb-3">Vantagens</h4>
+                  <ul className="space-y-1 text-sm text-brand-dark font-uni-neue">
+                    <li>• Mais segurança e fluidez no trânsito</li>
+                    <li>• Organização do fluxo viário</li>
+                    <li>• Materiais de longa durabilidade</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Imagem */}
+              <div className="relative h-96 lg:h-auto">
+                <img 
+                  src="/lovable-uploads/f877734c-a565-428f-9733-1b39f5419ee6.png" 
+                  alt="Sinalização Horizontal"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Cards dos outros serviços */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-2 border-border/50">
+          {services.slice(1).map((service, index) => (
+            <Card key={index + 1} className="group hover:shadow-card transition-all duration-300 hover:-translate-y-2 border-border/50">
               <CardHeader className="text-center">
                 <div className="mx-auto mb-4 p-3 bg-primary/10 rounded-full text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   {service.icon}
