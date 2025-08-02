@@ -1,10 +1,12 @@
+// src/components/Hero.tsx
+
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Shield, Clock, Award } from 'lucide-react';
+import { MessageCircle, Shield, Clock, Award } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 
 const Hero = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para sinalização viária.', '_blank');
+    window.open('https://wa.me/5589981440908?text=Olá! Gostaria de solicitar um orçamento para sinalização viária.', '_blank');
   };
 
   return (
@@ -16,20 +18,20 @@ const Hero = () => {
           alt="Sinalização viária profissional" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/80 via-brand-dark/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/70 to-transparent"></div>
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 z-10 relative">
-        <div className="max-w-3xl text-white">
+        {/* Adicionado padding-top aqui para criar o espaçamento */}
+        <div className="max-w-3xl text-white pt-20">
           <h1 className="font-russo text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-            Transformando Vias em Espaços 
-            <span className="text-primary block">Mais Seguros</span>
-            e Organizados
+            Engenharia de Tráfego para 
+            <span className="text-primary block">Vias Mais Seguras</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 font-uni-neue">
-            Soluções completas em sinalização viária para projetos públicos e privados com qualidade e segurança garantidas.
+          <p className="text-xl md:text-2xl mb-10 text-gray-200 font-uni-neue">
+            Especialistas em sinalização viária, oferecendo soluções completas com tecnologia e materiais homologados.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -39,16 +41,8 @@ const Hero = () => {
               onClick={handleWhatsApp}
               className="shadow-2xl"
             >
-              Solicite um Orçamento via WhatsApp
-              <ArrowRight className="w-6 h-6 ml-2" />
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              size="xl"
-              className="border-white text-white hover:bg-white hover:text-brand-dark"
-            >
-              Conheça Nossos Serviços
+              <MessageCircle className="w-6 h-6 mr-3" />
+              Solicitar Orçamento
             </Button>
           </div>
 
@@ -78,13 +72,6 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
         </div>
       </div>
     </section>

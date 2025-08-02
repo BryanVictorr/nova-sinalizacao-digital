@@ -1,7 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   Construction, 
   StopCircle, 
@@ -9,7 +8,7 @@ import {
   TrafficCone, 
   Ruler, 
   Wrench, 
-  Sparkles,
+  Sparkles, // Ícone para o novo serviço
   CheckCircle2,
   ArrowRight 
 } from 'lucide-react';
@@ -20,83 +19,97 @@ const Servicos = () => {
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  // --- CONTEÚDO ATUALIZADO AQUI ---
   const services = [
     {
       icon: <StopCircle className="w-12 h-12" />,
-      title: "SINALIZAÇÃO HORIZONTAL",
-      description: "A sinalização horizontal é composta por marcas, símbolos e legendas aplicados diretamente no pavimento das vias.",
-      howItWorks: "Realizada através de pintura com tinta acrílica ou aplicação de materiais termoplásticos, utilizando equipamentos especializados para garantir precisão e durabilidade.",
-      value: "Oferece organização visual clara do tráfego, orientando condutores sobre faixas de rolamento, áreas de parada e direcionamento de fluxo.",
-      impact: "Mais segurança e fluidez para pedestres e veículos em qualquer tipo de via.",
+      title: "Sinalização Horizontal",
+      description: "Pintura de solo em vias urbanas e rodoviárias com tintas de alta durabilidade (acrílica, termoplástica ou cold plastic).",
+      howItWorks: "Aplicação com equipamentos de última geração, garantindo alinhamento perfeito e excelente refletividade noturna.",
+      value: "Melhora a organização do tráfego, aumenta a segurança de pedestres e motoristas e reduz o risco de acidentes.",
+      impact: "Mais segurança e fluidez no trânsito com marcas viárias de alta performance.",
       benefits: [
-        "Organização eficiente do tráfego",
-        "Redução significativa de acidentes",
-        "Maior fluidez no trânsito urbano"
+        "Organização do fluxo viário",
+        "Redução de acidentes",
+        "Materiais de longa durabilidade para menor manutenção"
       ]
     },
     {
       icon: <Construction className="w-12 h-12" />,
-      title: "SINALIZAÇÃO VERTICAL",
-      description: "Conjunto de placas e dispositivos instalados verticalmente para informar, regular e advertir usuários das vias.",
-      howItWorks: "Instalação de placas confeccionadas em materiais de alta qualidade, com postes galvanizados e fundações adequadas para cada tipo de solo e condição climática.",
-      value: "Proporciona informações essenciais sobre regulamentação, advertências e orientações, garantindo comunicação clara e eficaz.",
-      impact: "Comunicação visual eficiente que reduz dúvidas e aumenta a segurança viária.",
+      title: "Sinalização Vertical",
+      description: "Fabricação e instalação de placas regulamentares, de advertência, indicativas e educativas.",
+      howItWorks: "Produção com materiais homologados (alumínio, chapa galvanizada), pintura retrorrefletiva e instalação em postes galvanizados.",
+      value: "Garante conformidade com o CTB, orienta e regula o fluxo de veículos, reduzindo infrações e aumentando a eficiência viária.",
+      impact: "Placas que orientam, educam e salvam vidas nas vias urbanas e rodoviárias.",
       benefits: [
-        "Informação clara e objetiva",
-        "Conformidade com normas técnicas",
-        "Durabilidade contra intempéries"
+        "Conformidade com o CTB",
+        "Alta visibilidade diurna e noturna",
+        "Estruturas resistentes às intempéries"
       ]
     },
     {
       icon: <Shield className="w-12 h-12" />,
-      title: "SINALIZAÇÃO DE SEGURANÇA",
-      description: "Equipamentos e dispositivos especializados para proteção em obras, eventos e áreas de risco temporário ou permanente.",
-      howItWorks: "Implantação de cones, barreiras, fitas zebradas, cavaletes e outros dispositivos de segurança, seguindo protocolos rigorosos de instalação.",
-      value: "Garante proteção máxima para trabalhadores e usuários da via durante intervenções, obras ou situações de emergência.",
-      impact: "Proteção total em ambientes de trabalho e situações de risco na via.",
+      title: "Dispositivos de Segurança Viária",
+      description: "Instalação de equipamentos de proteção como guard-rails, barreiras New Jersey, tachões e amortecedores de impacto.",
+      howItWorks: "Fixação com tecnologia que assegura resistência a impactos, conforme normas do CONTRAN.",
+      value: "Protege vidas em áreas críticas, reduz danos em acidentes e contribui para um trânsito mais seguro.",
+      impact: "Tecnologia que protege vidas em pontos críticos das estradas.",
       benefits: [
-        "Segurança máxima para trabalhadores",
-        "Proteção de usuários da via",
-        "Conformidade com normas de segurança"
+        "Amortecedores de impacto certificados",
+        "Guard-rails e barreiras que minimizam danos em colisões",
+        "Soluções para áreas urbanas e rodovias"
       ]
     },
     {
       icon: <TrafficCone className="w-12 h-12" />,
-      title: "SINALIZAÇÃO SEMAFÓRICA",
-      description: "Sistemas de controle de tráfego através de semáforos e controladores eletrônicos inteligentes.",
-      howItWorks: "Instalação de equipamentos semafóricos com tecnologia LED, controladores programáveis e sistemas de monitoramento remoto para otimização do fluxo.",
-      value: "Controle inteligente do tráfego em cruzamentos e vias, otimizando tempos e reduzindo congestionamentos através de tecnologia avançada.",
-      impact: "Controle inteligente que otimiza fluxo e reduz tempos de espera.",
+      title: "Sinalização Semafórica e Inteligente",
+      description: "Implantação de sistemas semafóricos convencionais e inteligentes com sensores e botoeiras.",
+      howItWorks: "Programação e instalação de semáforos LED de alta visibilidade, painéis de mensagens variáveis (PMV) e integração com CFTV.",
+      value: "Otimiza o fluxo de veículos e pedestres, reduz congestionamentos e amplia a eficiência do trânsito.",
+      impact: "Sistemas inteligentes para um trânsito mais seguro e eficiente.",
       benefits: [
-        "Redução de congestionamentos",
-        "Economia de energia com LED",
-        "Controle remoto e monitoramento"
+        "Semáforos LED de alta performance",
+        "Integração com sensores e painéis dinâmicos",
+        "Redução de congestionamentos e aumento da segurança"
       ]
     },
     {
       icon: <Ruler className="w-12 h-12" />,
-      title: "PROJETO DE SINALIZAÇÃO",
-      description: "Desenvolvimento de projetos técnicos personalizados e estudos de engenharia de tráfego.",
-      howItWorks: "Elaboração de projetos através de análise técnica detalhada, estudos de tráfego, levantamentos topográficos e aplicação de normas técnicas vigentes.",
-      value: "Soluções customizadas que atendem necessidades específicas de cada via, otimizando recursos e maximizando eficiência operacional.",
-      impact: "Projetos sob medida que maximizam eficiência e minimizam custos.",
+      title: "Projetos e Consultoria Técnica",
+      description: "Desenvolvimento de Planos de Sinalização Viária (PSV) e assessoria para adequação às normas de trânsito.",
+      howItWorks: "Elaboração de estudos técnicos por engenheiros especializados e uso de softwares de mobilidade urbana.",
+      value: "Garante que o município ou empresa esteja em conformidade com a legislação, evitando multas e melhorando a mobilidade.",
+      impact: "Planejamento estratégico para cidades mais seguras e organizadas.",
       benefits: [
-        "Análise técnica especializada",
-        "Soluções personalizadas",
-        "Otimização de recursos"
+        "Planos de Sinalização Viária (PSV) completos",
+        "Assessoria para órgãos públicos e privados",
+        "Garantia de conformidade com normas técnicas"
       ]
     },
     {
       icon: <Wrench className="w-12 h-12" />,
-      title: "MANUTENÇÃO E CONSERVAÇÃO",
-      description: "Serviços especializados de manutenção preventiva e corretiva para prolongar vida útil dos sistemas de sinalização.",
-      howItWorks: "Execução de cronogramas de manutenção preventiva, inspeções periódicas e intervenções corretivas utilizando materiais de qualidade e mão de obra especializada.",
-      value: "Preserva investimentos em sinalização, mantendo eficiência operacional e aparência adequada através de cuidados técnicos especializados.",
-      impact: "Economia a longo prazo e manutenção da eficiência operacional.",
+      title: "Manutenção e Reforço de Sinalização",
+      description: "Serviços de revitalização e substituição de sinalizações horizontais, verticais e dispositivos danificados.",
+      howItWorks: "Inspeção periódica e aplicação de novas camadas de pintura ou troca de placas e dispositivos.",
+      value: "Mantém a eficiência e visibilidade da sinalização, prolonga a vida útil e garante segurança contínua.",
+      impact: "Sinalizações sempre visíveis e eficientes para proteger vidas.",
       benefits: [
-        "Prolongamento da vida útil",
-        "Redução de custos operacionais",
-        "Manutenção da qualidade visual"
+        "Revitalização de pinturas e placas",
+        "Substituição rápida de dispositivos danificados",
+        "Inspeções periódicas com garantia de qualidade"
+      ]
+    },
+    {
+      icon: <Sparkles className="w-12 h-12" />,
+      title: "Serviços Especiais e Personalizados",
+      description: "Sinalização para áreas específicas como obras, eventos, áreas industriais, turísticas e condomínios.",
+      howItWorks: "Desenvolvimento sob medida com adaptações conforme as necessidades do cliente.",
+      value: "Soluções personalizadas que elevam a organização e segurança em espaços privados e públicos, agregando valor estético e funcional.",
+      impact: "Soluções sob medida para cada necessidade, de obras a eventos.",
+      benefits: [
+        "Sinalização para áreas privadas, turísticas e industriais",
+        "Projetos personalizados com agilidade e eficiência",
+        "Atendimento exclusivo para demandas específicas"
       ]
     }
   ];
@@ -125,39 +138,35 @@ const Servicos = () => {
           <div className="space-y-16">
             {services.map((service, index) => (
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                  <Card className="h-full border-border/50 hover:shadow-card transition-all">
-                    <CardHeader className="text-center pb-6">
-                      <div className="mx-auto mb-6 p-4 bg-primary/10 rounded-full text-primary">
-                        {service.icon}
-                      </div>
-                      <CardTitle className="font-russo text-2xl text-brand-dark">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <div>
-                        <h4 className="font-uni-neue font-bold text-lg text-brand-dark mb-2">O que é:</h4>
-                        <CardDescription className="font-uni-neue">
-                          {service.description}
-                        </CardDescription>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-uni-neue font-bold text-lg text-brand-dark mb-2">Como é realizada:</h4>
-                        <CardDescription className="font-uni-neue">
-                          {service.howItWorks}
-                        </CardDescription>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-uni-neue font-bold text-lg text-brand-dark mb-2">Valor agregado:</h4>
-                        <CardDescription className="font-uni-neue">
-                          {service.value}
-                        </CardDescription>
-                      </div>
-                    </CardContent>
-                  </Card>
+                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''} bg-brand-dark text-white rounded-2xl p-8 h-full flex flex-col`}>
+                  <div className="text-center mb-6">
+                    <div className="mx-auto mb-6 p-4 bg-primary/20 rounded-full text-primary inline-block">
+                      {service.icon}
+                    </div>
+                    <h2 className="font-russo text-2xl text-primary">
+                      {service.title}
+                    </h2>
+                  </div>
+                  <div className="space-y-6 flex-grow">
+                    <div>
+                      <h4 className="font-uni-neue font-bold text-lg text-white mb-2">O que é:</h4>
+                      <p className="font-uni-neue text-gray-300">
+                        {service.description}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-uni-neue font-bold text-lg text-white mb-2">Como é realizada:</h4>
+                      <p className="font-uni-neue text-gray-300">
+                        {service.howItWorks}
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-uni-neue font-bold text-lg text-white mb-2">Valor agregado:</h4>
+                      <p className="font-uni-neue text-gray-300">
+                        {service.value}
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 
                 <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
@@ -175,7 +184,6 @@ const Servicos = () => {
                         ))}
                       </div>
                     </div>
-                    
                     <Button 
                       variant="default" 
                       size="lg"

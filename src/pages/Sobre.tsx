@@ -2,21 +2,31 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Target, Eye, Heart, Users, Award, Clock } from 'lucide-react';
 import fleetImage from '@/assets/fleet-image.jpg';
+import { Target, Eye, Gem, ShieldCheck, Users, Award, Clock } from 'lucide-react';
+import ValueCard from '@/components/ValueCard';
+import ValuesListCard from '@/components/ValuesListCard';
 
 const Sobre = () => {
   const handleWhatsApp = () => {
     window.open('https://wa.me/5511999999999?text=Olá! Gostaria de conhecer melhor a Nova Sinalização.', '_blank');
   };
 
-  const values = [
-    "Compromisso com a segurança viária",
-    "Qualidade em todos os serviços prestados",
-    "Inovação tecnológica constante",
-    "Responsabilidade ambiental",
-    "Transparência nas relações",
-    "Excelência no atendimento ao cliente"
+  const valoresItems = [
+    { title: "Compromisso com a segurança", text: "Nosso foco é salvar vidas por meio de sinalizações eficientes e visíveis." },
+    { title: "Excelência técnica", text: "Buscamos a mais alta qualidade em todos os serviços e materiais utilizados." },
+    { title: "Inovação", text: "Investimos constantemente em novas tecnologias e processos inteligentes." },
+    { title: "Sustentabilidade", text: "Adotamos práticas que respeitam o meio ambiente e promovem o uso responsável de recursos." },
+    { title: "Ética e transparência", text: "Atuamos com integridade em todos os relacionamentos e contratos." },
+    { title: "Valorização das pessoas", text: "Incentivamos o crescimento profissional e pessoal da nossa equipe." }
+  ];
+
+  // Dados para o novo card de Diferenciais
+  const diferenciaisItems = [
+    { title: "Equipe técnica com engenheiros", text: "e especialistas certificados." },
+    { title: "Materiais e tecnologias homologados", text: "pelos órgãos competentes (ABNT, CONTRAN, DENATRAN)." },
+    { title: "Soluções sob medida para obras", text: "públicas, condomínios, áreas industriais e comerciais." },
+    { title: "Atuação ágil com foco em", text: "resultados e cumprimento de prazos." }
   ];
 
   return (
@@ -47,21 +57,17 @@ const Sobre = () => {
               </h2>
               <div className="space-y-4 font-uni-neue text-muted-foreground">
                 <p>
-                  A Nova Sinalização é uma empresa referência no setor de engenharia de tráfego, 
-                  especializada em soluções completas de sinalização viária. Fundada com o propósito 
-                  de tornar as vias mais seguras e organizadas, desenvolvemos projetos inovadores 
-                  que atendem tanto o setor público quanto o privado.
+                  A Nova Sinalização é uma empresa referência no setor de engenharia de tráfego, e soluções em segurança viária comprometida com a qualidade, inovação e sustentabilidade.
+                  Com atuação em projetos públicos e privados, entregamos soluções completas e personalizadas que promovem mobilidade eficiente e proteção para todos os usuários das vias.
                 </p>
                 <p>
-                  Nossa trajetória é marcada pela constante busca por excelência técnica e 
-                  atendimento personalizado. Contamos com uma equipe altamente qualificada e 
-                  equipamentos de última geração para garantir a qualidade e eficiência em 
-                  todos os nossos projetos.
+                  Com uma equipe técnica altamente qualificada, tecnologia de ponta e materiais homologados, somos 
+                  especialistas em Sinalização Horizontal, Vertical, Dispositivos de Segurança, Sinalização Semafórica e Inteligente, 
+                  Projetos e Consultoria Técnica, Manutenção e Serviços Especiais.
                 </p>
                 <p>
-                  Ao longo dos anos, consolidamos nossa posição como uma das principais empresas 
-                  do setor, sempre priorizando a segurança, a qualidade e a inovação em nossos 
-                  serviços.
+                  Nosso propósito é transformar vias urbanas e rodovias em espaços mais seguros e organizados, contribuindo 
+                  para a redução de acidentes e a valorização da infraestrutura viária.
                 </p>
               </div>
               <Button 
@@ -89,129 +95,32 @@ const Sobre = () => {
       {/* Mission, Vision, Values */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Mission */}
-            <div className="relative bg-brand-dark rounded-3xl p-8 text-white overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="font-russo text-2xl text-primary mb-4">Missão:</h3>
-                <p className="font-uni-neue text-white/90 leading-relaxed">
-                  Proporcionar soluções completas em sinalização viária, com inovação, 
-                  qualidade e eficiência, garantindo segurança no trânsito e contribuindo 
-                  para o desenvolvimento urbano sustentável.
-                </p>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
-                <Target className="w-12 h-12 text-brand-dark" />
-              </div>
-            </div>
-
-            {/* Vision */}
-            <div className="relative bg-brand-dark rounded-3xl p-8 text-white overflow-hidden">
-              <div className="relative z-10">
-                <h3 className="font-russo text-2xl text-primary mb-4">Visão:</h3>
-                <p className="font-uni-neue text-white/90 leading-relaxed">
-                  Ser reconhecida como a principal referência em sinalização viária no 
-                  Brasil, destacando-se pela excelência técnica, inovação contínua e impacto 
-                  positivo na mobilidade urbana e rodoviária.
-                </p>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
-                <Eye className="w-12 h-12 text-brand-dark" />
-              </div>
-            </div>
-
-            {/* Values */}
-            <div className="relative bg-brand-dark rounded-3xl p-8 text-white overflow-hidden md:col-span-2 lg:col-span-1">
-              <div className="relative z-10">
-                <h3 className="font-russo text-2xl text-primary mb-4">Valores:</h3>
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-1">• Segurança</h4>
-                    <p className="font-uni-neue text-white/80 text-sm">
-                      Foco em salvar vidas através de sinalizações eficientes.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-1">• Excelência</h4>
-                    <p className="font-uni-neue text-white/80 text-sm">
-                      Qualidade superior em todos os serviços prestados.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-1">• Inovação</h4>
-                    <p className="font-uni-neue text-white/80 text-sm">
-                      Tecnologias avançadas e processos inteligentes.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-1">• Sustentabilidade</h4>
-                    <p className="font-uni-neue text-white/80 text-sm">
-                      Práticas responsáveis com o meio ambiente.
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="font-uni-neue font-bold text-white mb-1">• Transparência</h4>
-                    <p className="font-uni-neue text-white/80 text-sm">
-                      Integridade em todos os relacionamentos.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
-                <Heart className="w-12 h-12 text-brand-dark" />
-              </div>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <ValueCard
+              icon={<Target />}
+              title="Missão"
+              description="Proporcionar soluções completas em sinalização viária, com inovação, qualidade e eficiência, garantindo segurança no trânsito e contribuindo para o desenvolvimento urbano sustentável."
+            />
+            <ValueCard
+              icon={<Eye />}
+              title="Visão"
+              description="Ser reconhecida como a principal referência em sinalização viária no Brasil, destacando-se pela excelência técnica, inovação contínua e impacto positivo na mobilidade urbana e rodoviária."
+            />
           </div>
+          <ValuesListCard
+            icon={<Gem />}
+            title="Valores"
+            items={valoresItems}
+          />
+          <ValuesListCard
+            icon={<ShieldCheck />}
+            title="Diferenciais da Nova Sinalização"
+            items={diferenciaisItems}
+          />
         </div>
       </section>
-
-      {/* Statistics */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-russo text-3xl md:text-4xl text-brand-dark mb-6">
-              Números que Falam por Nós
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-primary" />
-              </div>
-              <div className="font-russo text-3xl text-brand-dark mb-2">500+</div>
-              <div className="text-muted-foreground font-uni-neue">Projetos Realizados</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-primary" />
-              </div>
-              <div className="font-russo text-3xl text-brand-dark mb-2">15+</div>
-              <div className="text-muted-foreground font-uni-neue">Anos de Experiência</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-8 h-8 text-primary" />
-              </div>
-              <div className="font-russo text-3xl text-brand-dark mb-2">98%</div>
-              <div className="text-muted-foreground font-uni-neue">Entregas no Prazo</div>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-primary" />
-              </div>
-              <div className="font-russo text-3xl text-brand-dark mb-2">100%</div>
-              <div className="text-muted-foreground font-uni-neue">Satisfação dos Clientes</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
+    <Footer />
+  </div>
   );
 };
 

@@ -26,27 +26,25 @@ const Contato = () => {
   });
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de entrar em contato com a Nova Sinalização.', '_blank');
+    window.open('https://wa.me/5589981440908?text=Olá! Gostaria de entrar em contato com a Nova Sinalização.', '_blank');
   };
 
   const handleEmail = () => {
-    window.open('mailto:contato@novasinalizacao.com.br');
+    window.open('mailto:contato@novasinalizacao.ind.br');
   };
 
   const handlePhone = () => {
-    window.open('tel:+551199999999');
+    window.open('tel:5589981440908');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simulate form submission
     toast({
       title: "Mensagem enviada com sucesso!",
       description: "Entraremos em contato em breve. Obrigado!",
     });
     
-    // Reset form
     setFormData({
       name: '',
       email: '',
@@ -80,54 +78,52 @@ const Contato = () => {
         </div>
       </section>
 
-      {/* Contact Methods */}
+      {/* --- Contact Methods (ÁREA ALTERADA) --- */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="text-center p-6 border-border/50 hover:shadow-card transition-all group cursor-pointer" onClick={handleWhatsApp}>
-              <CardContent className="space-y-4">
-                <div className="mx-auto w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center group-hover:bg-green-500 transition-colors">
-                  <MessageCircle className="w-8 h-8 text-green-500 group-hover:text-white" />
-                </div>
-                <h3 className="font-russo text-xl text-brand-dark">WhatsApp</h3>
-                <p className="text-muted-foreground font-uni-neue">
-                  Atendimento rápido e direto
-                </p>
-                <p className="font-uni-neue font-semibold text-green-500">
-                  (11) 99999-9999
-                </p>
-              </CardContent>
-            </Card>
+            
+            {/* Card WhatsApp */}
+            <div className="bg-brand-dark text-white rounded-2xl p-6 text-center group cursor-pointer transition-all hover:-translate-y-2" onClick={handleWhatsApp}>
+              <div className="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                <MessageCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-russo text-xl text-white mb-2">WhatsApp</h3>
+              <p className="text-gray-300 font-uni-neue mb-2">
+                Atendimento rápido e direto
+              </p>
+              <p className="font-uni-neue font-semibold text-primary">
+                (89) 98144-0908
+              </p>
+            </div>
 
-            <Card className="text-center p-6 border-border/50 hover:shadow-card transition-all group cursor-pointer" onClick={handlePhone}>
-              <CardContent className="space-y-4">
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Phone className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
-                </div>
-                <h3 className="font-russo text-xl text-brand-dark">Telefone</h3>
-                <p className="text-muted-foreground font-uni-neue">
-                  Ligue para nós
-                </p>
-                <p className="font-uni-neue font-semibold text-primary">
-                  (11) 3333-3333
-                </p>
-              </CardContent>
-            </Card>
+            {/* Card Telefone */}
+            <div className="bg-brand-dark text-white rounded-2xl p-6 text-center group cursor-pointer transition-all hover:-translate-y-2" onClick={handlePhone}>
+              <div className="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                <Phone className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-russo text-xl text-white mb-2">Telefone</h3>
+              <p className="text-gray-300 font-uni-neue mb-2">
+                Ligue para nós
+              </p>
+              <p className="font-uni-neue font-semibold text-primary">
+                (89) 98144-0908
+              </p>
+            </div>
 
-            <Card className="text-center p-6 border-border/50 hover:shadow-card transition-all group cursor-pointer" onClick={handleEmail}>
-              <CardContent className="space-y-4">
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Mail className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
-                </div>
-                <h3 className="font-russo text-xl text-brand-dark">E-mail</h3>
-                <p className="text-muted-foreground font-uni-neue">
-                  Envie sua mensagem
-                </p>
-                <p className="font-uni-neue font-semibold text-primary break-all">
-                  contato@novasinalizacao.com.br
-                </p>
-              </CardContent>
-            </Card>
+            {/* Card Email */}
+            <div className="bg-brand-dark text-white rounded-2xl p-6 text-center group cursor-pointer transition-all hover:-translate-y-2" onClick={handleEmail}>
+              <div className="mx-auto w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mb-4">
+                <Mail className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-russo text-xl text-white mb-2">E-mail</h3>
+              <p className="text-gray-300 font-uni-neue mb-2">
+                Envie sua mensagem
+              </p>
+              <p className="font-uni-neue font-semibold text-primary break-all">
+                contato@novasinalizacao.ind.br
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -161,7 +157,7 @@ const Contato = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        placeholder="(11) 99999-9999"
+                        placeholder="(89) 98144-0908"
                         className="font-uni-neue"
                       />
                     </div>
@@ -217,9 +213,7 @@ const Contato = () => {
                     <div className="font-uni-neue">
                       <h4 className="font-semibold text-brand-dark mb-1">Endereço</h4>
                       <p className="text-muted-foreground">
-                        Rua da Sinalização, 123<br />
-                        Vila Industrial - São Paulo/SP<br />
-                        CEP: 01234-567
+                        Av. Deputado Raimundo de Sá Urtiga, Bomba, Picos-PI
                       </p>
                     </div>
                   </div>
@@ -227,10 +221,9 @@ const Contato = () => {
                   <div className="flex items-start space-x-4">
                     <Phone className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                     <div className="font-uni-neue">
-                      <h4 className="font-semibold text-brand-dark mb-1">Telefones</h4>
+                      <h4 className="font-semibold text-brand-dark mb-1">Telefone</h4>
                       <p className="text-muted-foreground">
-                        (11) 99999-9999 (WhatsApp)<br />
-                        (11) 3333-3333 (Fixo)
+                        (89) 98144-0908
                       </p>
                     </div>
                   </div>
@@ -240,7 +233,7 @@ const Contato = () => {
                     <div className="font-uni-neue">
                       <h4 className="font-semibold text-brand-dark mb-1">E-mail</h4>
                       <p className="text-muted-foreground">
-                        contato@novasinalizacao.com.br
+                        contato@novasinalizacao.ind.br
                       </p>
                     </div>
                   </div>
@@ -255,27 +248,6 @@ const Contato = () => {
                       </p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-primary/5 border-primary/20">
-                <CardContent className="p-6 text-center">
-                  <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-russo text-xl text-brand-dark mb-2">
-                    Atendimento via WhatsApp
-                  </h3>
-                  <p className="text-muted-foreground font-uni-neue mb-4">
-                    Para um atendimento mais rápido, entre em contato pelo WhatsApp
-                  </p>
-                  <Button 
-                    variant="whatsapp" 
-                    size="lg"
-                    onClick={handleWhatsApp}
-                    className="w-full"
-                  >
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Falar no WhatsApp
-                  </Button>
                 </CardContent>
               </Card>
             </div>

@@ -11,11 +11,11 @@ import {
 
 const Footer = () => {
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999', '_blank');
+    window.open('https://wa.me/5589981440908', '_blank');
   };
 
   const handleEmail = () => {
-    window.open('mailto:contato@novasinalizacao.com.br');
+    window.open('mailto:contato@novasinalizacao.ind.br');
   };
 
   return (
@@ -56,12 +56,15 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
+          {/* --- Company Info (ÁREA ALTERADA) --- */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-russo text-lg font-bold">NS</span>
-              </div>
+            <div className="flex items-center space-x-3 mb-6">
+              {/* Ícone substituído pela imagem */}
+              <img 
+                src="/logo_footer.png" 
+                alt="Logo Nova Sinalização" 
+                className="h-12 w-auto" 
+              />
               <span className="font-russo text-xl">Nova Sinalização</span>
             </div>
             <p className="text-gray-300 font-uni-neue">
@@ -71,7 +74,7 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/nova_logisticaesinalizacao" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
@@ -111,20 +114,17 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary mt-1" />
                 <div>
-                  <p className="text-gray-300">(11) 99999-9999</p>
-                  <p className="text-gray-300">(11) 3333-3333</p>
+                  <p className="text-gray-300 hover:text-primary transition-colors"><a href="tel:89981440908">(89) 98144-0908</a></p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-primary mt-1" />
-                <p className="text-gray-300">contato@novasinalizacao.com.br</p>
+                <p className="text-gray-300 hover:text-primary transition-colors"><a href="mailto:contato@novasinalizacao.ind.br">contato@novasinalizacao.ind.br</a></p>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-1" />
                 <p className="text-gray-300">
-                  Rua da Sinalização, 123<br />
-                  Vila Industrial - São Paulo/SP<br />
-                  CEP: 01234-567
+                  Av. Deputado Raimundo de Sá Urtiga, Bomba, Picos-PI
                 </p>
               </div>
             </div>
@@ -137,7 +137,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm font-uni-neue">
-              © 2024 Nova Sinalização. Todos os direitos reservados.
+              © {new Date().getFullYear()} Nova Sinalização. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">Política de Privacidade</a>

@@ -1,9 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Importa Link e useLocation
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  // Verifica se a página atual é a Home
+  const isHomePage = location.pathname === '/';
+
+  // Efeito para monitorar o scroll da página
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '/' },
@@ -14,39 +29,57 @@ const Navigation = () => {
   ];
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5511999999999?text=Olá! Gostaria de solicitar um orçamento para sinalização viária.', '_blank');
+    // NÚMERO ATUALIZADO
+    window.open('https://wa.me/5589981440908?text=Olá! Gostaria de solicitar um orçamento para sinalização viária.', '_blank');
   };
 
+  // ----- Lógica de Estilo Dinâmico -----
+  const headerClasses = isScrolled || !isHomePage
+    ? "bg-background/95 backdrop-blur-sm shadow-md"
+    : "bg-transparent";
+
+  const linkColor = isScrolled || !isHomePage
+    ? "text-foreground hover:text-primary"
+    : "text-white hover:text-primary";
+
+  const buttonVariant = isScrolled || !isHomePage
+    ? "default" 
+    : "outline";
+  
+  const buttonColor = isScrolled || !isHomePage
+    ? ""
+    : "border-white text-white hover:bg-white hover:text-brand-dark";
+
   return (
-    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClasses}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="/logo.png" 
               alt="Logo Nova Sinalização" 
               className="h-14 w-auto" 
             />
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors font-uni-neue font-semibold"
+                to={item.href}
+                className={`${linkColor} transition-colors font-uni-neue font-semibold`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* WhatsApp Button */}
           <div className="hidden md:block">
-            <Button variant="whatsapp" onClick={handleWhatsApp}>
-              <Phone className="w-4 h-4" />
+            <Button variant={buttonVariant} onClick={handleWhatsApp} className={buttonColor}>
+              <Phone className="w-4 h-4 mr-2" />
               Fale Conosco
             </Button>
           </div>
@@ -56,26 +89,26 @@ const Navigation = () => {
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className={`w-6 h-6 ${linkColor}`} /> : <Menu className={`w-6 h-6 ${linkColor}`} />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="md:hidden py-4 border-t bg-background border-border">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={item.href}
                   className="text-foreground hover:text-primary transition-colors font-uni-neue font-semibold"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <Button variant="whatsapp" onClick={handleWhatsApp} className="mt-4">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 mr-2" />
                 Fale Conosco
               </Button>
             </div>
