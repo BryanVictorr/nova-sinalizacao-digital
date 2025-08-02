@@ -26,7 +26,7 @@ const Hero = () => {
         {/* Adicionado padding-top aqui para criar o espaçamento */}
         <div className="max-w-3xl text-white pt-20">
           <h1 className="font-russo text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-            Engenharia de Tráfego para 
+            Projetos de Tráfego para 
             <span className="text-primary block">Vias Mais Seguras</span>
           </h1>
           
