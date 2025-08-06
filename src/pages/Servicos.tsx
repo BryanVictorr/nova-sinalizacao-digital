@@ -16,7 +16,7 @@ import {
 const Servicos = () => {
   const handleServiceContact = (serviceName: string) => {
     const message = `Olá! Gostaria de solicitar um orçamento para ${serviceName}.`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/5589981440908?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   // --- CONTEÚDO ATUALIZADO AQUI ---

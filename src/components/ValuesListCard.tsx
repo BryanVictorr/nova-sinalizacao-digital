@@ -1,6 +1,5 @@
 import React from 'react';
 
-// A interface agora espera uma propriedade 'items' que é uma lista
 interface ValuesListCardProps {
   icon: React.ReactNode;
   title: string;

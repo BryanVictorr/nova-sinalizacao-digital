@@ -14,9 +14,9 @@ const Localizacao = () => {
   const handleWhatsApp = () => {
     window.open('https://wa.me/5589981440908?text=Olá! Gostaria de saber como chegar até a Nova Sinalização.', '_blank');
   };
-
+  
   const handleMapsDirection = () => {
-    window.open('https://www.google.com/maps/search/?api=1&query=Av.+Deputado+Raimundo+de+Sá+Urtiga,+Bomba,+Picos-PI', '_blank');
+    window.open('https://www.google.com/maps/embed/v1/place?key=AIzaSyDQkFGOLvE4Wvuo8gYjiTc_vXOuWvIlpJ4&q=Av. Dep. de - Av. Dep. Sá Urtiga - São José, Picos - PI, 64601-385');
   };
 
   return (
@@ -47,7 +47,7 @@ const Localizacao = () => {
                 <CardContent className="p-0">
                   <div className="relative h-96 bg-muted">
                     <iframe
-                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQkFGOLvE4Wvuo8gYjiTc_vXOuWvIlpJ4&q=Av.+Deputado+Raimundo+de+Sá+Urtiga,+Bomba,+Picos-PI"
+                      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQkFGOLvE4Wvuo8gYjiTc_vXOuWvIlpJ4&q=Av. Dep. de - Av. Dep. Sá Urtiga - São José, Picos - PI, 64601-385"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
