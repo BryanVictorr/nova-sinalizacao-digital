@@ -1,5 +1,7 @@
+// src/components/Navigation.tsx
+
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Importa Link e useLocation
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -8,10 +10,8 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // Verifica se a página atual é a Home
   const isHomePage = location.pathname === '/';
 
-  // Efeito para monitorar o scroll da página
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -29,7 +29,6 @@ const Navigation = () => {
   ];
 
   const handleWhatsApp = () => {
-    // NÚMERO ATUALIZADO
     window.open('https://wa.me/5589981440908?text=Olá! Gostaria de solicitar um orçamento para sinalização viária.', '_blank');
   };
 
@@ -49,6 +48,11 @@ const Navigation = () => {
   const buttonColor = isScrolled || !isHomePage
     ? ""
     : "border-white text-white hover:bg-white hover:text-brand-dark";
+  
+  // 1. Lógica para trocar a imagem do logo
+  const logoSrc = isScrolled || !isHomePage
+    ? "/logo.png" // Logo padrão para fundo sólido
+    : "/logo_branca.png"; // Logo branca para fundo transparente
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClasses}`}>
@@ -56,10 +60,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
+            {/* 2. Usamos a variável 'logoSrc' para definir a imagem dinamicamente */}
             <img 
-              src="/logo.png" 
+              src={logoSrc} 
               alt="Logo Nova Sinalização" 
-              className="h-14 w-auto" 
+              className="h-18 w-48 transition-all duration-300" // Largura foi definida explicitamente
             />
           </Link>
 
