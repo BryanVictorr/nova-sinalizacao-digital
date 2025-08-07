@@ -51,8 +51,8 @@ const Navigation = () => {
   
   // 1. Lógica para trocar a imagem do logo
   const logoSrc = isScrolled || !isHomePage
-    ? "/logo.png" // Logo padrão para fundo sólido
-    : "/logo_branca.png"; // Logo branca para fundo transparente
+    ? "/logo_preta.png" // Logo padrão para fundo sólido
+    : "/logo_branca.webp"; // Logo branca para fundo transparente
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClasses}`}>
@@ -60,11 +60,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            {/* 2. Usamos a variável 'logoSrc' para definir a imagem dinamicamente */}
+            {/* 2. Usei a variável 'logoSrc' para definir a imagem dinamicamente */}
             <img 
               src={logoSrc} 
               alt="Logo Nova Sinalização" 
-              className="h-18 w-48 transition-all duration-300" // Largura foi definida explicitamente
+              className="h-14 w-48 transition-all duration-300" // Largura foi definida
             />
           </Link>
 

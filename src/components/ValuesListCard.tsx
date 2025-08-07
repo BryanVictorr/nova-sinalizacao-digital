@@ -20,7 +20,7 @@ const ValuesListCard: React.FC<ValuesListCardProps> = ({ icon, title, items }) =
       {/* Título principal */}
       <h3 className="font-russo text-2xl text-white mb-6">{title}</h3>
 
-      {/* Grid agora usa a lista de 'items' recebida via props */}
+      {/* Grid usa a lista de 'items' recebida via props */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
         {items.map((item, index) => (
           <div key={index}>

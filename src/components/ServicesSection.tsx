@@ -7,8 +7,14 @@ import {
   TrafficCone, 
   Ruler, 
   Wrench, 
+  Sparkles,
   ArrowRight 
 } from 'lucide-react';
+
+// Função para criar IDs para URL
+const createSlug = (text: string) => {
+  return text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+};
 
 interface ServicesSectionProps {
   variant?: 'simple' | 'full';
@@ -38,7 +44,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ variant = 'full' }) =
       description: " Instalação de equipamentos de proteção como guard-rails, barreiras New Jersey, tachões e amortecedores de impacto",
       execution: "Fixação com tecnologia que assegura resistência a impactos, conforme normas do CONTRAN",
       value: "Protege vidas em áreas críticas, reduz danos em acidentes e contribui para um trânsito mais seguro.       ",
-      benefits: ["Tecnologia que protege vidas em pontos críticos", "Guard-rails e barreiras que minimizam danos", "Amortecedores de impacto certificados", "Soluções para áreas urbanas e rodovias"]
+      benefits: ["Tecnologia que protege vidas em pontos críticos das estradas", "Guard-rails e barreiras que minimizam danos", "Amortecedores de impacto certificados", "Soluções para áreas urbanas e rodovias"]
     },
     {
       icon: <TrafficCone className="w-8 h-8" />,
@@ -63,12 +69,17 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ variant = 'full' }) =
       execution: "Inspeção periódica e aplicação de novas camadas de pintura ou troca de placas e dispositivos.",
       value: " Mantém a eficiência e visibilidade da sinalização, prolonga a vida útil e garante segurança contínua.",
       benefits: ["Sinalizações sempre visíveis e eficientes", " Revitalização de pinturas e placas", "Substituição rápida de dispositivos danificados", " Inspeções periódicas com garantia de qualidade"]
+    },
+    {
+        icon: <Sparkles className="w-8 h-8" />,
+        title: "Serviços Especiais e Personalizados",
+        description: "Sinalização para áreas específicas como obras, eventos, áreas industriais, turísticas e condomínios.",
+        execution: "Desenvolvimento sob medida com adaptações conforme as necessidades do cliente.",
+        value: "Soluções personalizadas que elevam a organização e segurança em espaços privados e públicos, agregando valor estético e funcional.",
+        benefits: [ "Soluções sob medida para cada necessidade, de obras a eventos", "Sinalização para áreas privadas, turísticas e industriais", "Projetos personalizados com agilidade e eficiência", "Atendimento exclusivo para demandas específicas" ]
     }
   ];
 
-  // 2. Removemos a função do WhatsApp, pois não será mais usada aqui.
-
-  // Botão reutilizável que leva para a página de serviços
   const ViewServicesButton = () => (
     <div className="text-center mt-12">
       <Link to="/servicos">
@@ -92,22 +103,24 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ variant = 'full' }) =
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-brand-dark rounded-xl p-6 flex items-center h-full group transition-all hover:bg-primary/90">
+              <Link 
+                to={`/servicos#${createSlug(service.title)}`}
+                key={index} 
+                className="bg-brand-dark rounded-xl p-6 flex items-center h-full group transition-all hover:bg-primary/90 hover:-translate-y-2">
                 <div className="p-3 bg-primary/20 rounded-full text-primary mr-4 group-hover:bg-brand-dark group-hover:text-primary transition-colors">
                   {service.icon}
                 </div>
                 <h3 className="font-russo text-xl text-white flex-grow">{service.title}</h3>
-              </div>
+              </Link>
             ))}
           </div>
-          {/* 3. Adicionamos o botão também no modo 'simple' */}
           <ViewServicesButton />
         </div>
       </section>
     );
   }
 
-  // Modo 'full' (padrão)
+  // Versão 'full' (padrão)
   return (
     <section className="py-20 bg-gradient-section">
       <div className="container mx-auto px-4">
@@ -117,7 +130,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ variant = 'full' }) =
             Oferecemos serviços completos em sinalização viária com tecnologia de ponta e equipe especializada para garantir segurança e eficiência em suas vias.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {services.map((service, index) => (
             <div key={index} className="bg-brand-dark rounded-xl overflow-hidden p-8 text-white flex flex-col">
               <h3 className="font-russo text-2xl text-primary mb-6 flex items-center gap-3">
@@ -147,7 +160,6 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ variant = 'full' }) =
             </div>
           ))}
         </div>
-        {/* 4. Usamos o mesmo botão reutilizável no modo 'full' */}
         <ViewServicesButton />
       </div>
     </section>

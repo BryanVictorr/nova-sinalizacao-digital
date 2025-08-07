@@ -56,10 +56,8 @@ const Footer = () => {
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* --- Company Info (ÁREA ALTERADA) --- */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3 mb-6">
-              {/* Ícone substituído pela imagem */}
               <img 
                 src="/logo_footer.png" 
                 alt="Logo Nova Sinalização" 
@@ -71,14 +69,8 @@ const Footer = () => {
               Referência em sinalização viária e engenharia de tráfego, oferecendo soluções completas e inovadoras para seus projetos.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
               <a href="https://www.instagram.com/nova_logisticaesinalizacao" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
