@@ -1,12 +1,12 @@
-// src/components/Navigation.tsx
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+// 1. Importamos os componentes do Sheet (gaveta)
+import { Sheet, SheetContent, SheetClose, SheetTrigger } from '@/components/ui/sheet';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // 2. Não precisamos mais do estado 'isOpen', o Sheet controla isso sozinho
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -49,26 +49,22 @@ const Navigation = () => {
     ? ""
     : "border-white text-white hover:bg-white hover:text-brand-dark";
   
-  // 1. Lógica para trocar a imagem do logo
   const logoSrc = isScrolled || !isHomePage
-    ? "/logo_preta.png" // Logo padrão para fundo sólido
-    : "/logo_branca.webp"; // Logo branca para fundo transparente
+    ? "/logo_preta.png"
+    : "/logo_branca.webp";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClasses}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <Link to="/" className="flex items-center">
-            {/* 2. Usei a variável 'logoSrc' para definir a imagem dinamicamente */}
             <img 
               src={logoSrc} 
               alt="Logo Nova Sinalização" 
-              className="h-14 w-48 transition-all duration-300" // Largura foi definida
+              className="h-16 w-48 transition-all duration-300" 
             />
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
@@ -81,7 +77,6 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* WhatsApp Button */}
           <div className="hidden md:block">
             <Button variant={buttonVariant} onClick={handleWhatsApp} className={buttonColor}>
               <Phone className="w-4 h-4 mr-2" />
@@ -89,36 +84,38 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X className={`w-6 h-6 ${linkColor}`} /> : <Menu className={`w-6 h-6 ${linkColor}`} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t bg-background border-border">
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-foreground hover:text-primary transition-colors font-uni-neue font-semibold"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Button variant="whatsapp" onClick={handleWhatsApp} className="mt-4">
-                <Phone className="w-4 h-4 mr-2" />
-                Fale Conosco
-              </Button>
-            </div>
+          {/* 3. Botão do menu mobile agora usa o SheetTrigger */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className={`w-6 h-6 ${linkColor}`} />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-brand-dark border-l-gray-800 text-white p-6 pt-12">
+                <nav className="flex flex-col space-y-6">
+                  {navItems.map((item) => (
+                    // 4. SheetClose fecha o menu ao clicar no link
+                    <SheetClose asChild key={item.name}>
+                      <Link
+                        to={item.href}
+                        className="text-xl font-uni-neue font-semibold text-gray-200 hover:text-primary transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </nav>
+                <div className="mt-8 border-t border-gray-700 pt-6">
+                  <Button variant="whatsapp" onClick={handleWhatsApp} className="w-full">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Fale Conosco
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
