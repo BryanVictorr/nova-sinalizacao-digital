@@ -21,7 +21,6 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
     { name: 'Sobre', href: '/sobre' },
     { name: 'Serviços', href: '/servicos' },
     { name: 'Localização', href: '/localizacao' },
