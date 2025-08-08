@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// 1. Importamos os componentes do Sheet (gaveta)
 import { Sheet, SheetContent, SheetClose, SheetTrigger } from '@/components/ui/sheet';
 
 const Navigation = () => {
@@ -60,7 +59,7 @@ const Navigation = () => {
             <img 
               src={logoSrc} 
               alt="Logo Nova Sinalização" 
-              className="h-16 w-48 transition-all duration-300" 
+              className="h-14 w-44 transition-all duration-300" 
             />
           </Link>
 
